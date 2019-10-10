@@ -57,3 +57,17 @@ def format_name(df):
 def drop_features(df):
     return df.drop(['Ticket', 'Name', 'Embarked'], axis=1)
 
+#apply transformations
+def transform_features(df):
+    df = simplify_ages(df)
+    df = simplify_cabins(df)
+    df = simplify_fares(df)
+    df = format_name(df)
+    df = drop_features(df)
+    return df
+
+data_train = transform_features(data_train)
+data_test = transform_features(data_test)
+data_train.head()
+
+ 
