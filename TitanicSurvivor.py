@@ -32,3 +32,8 @@ def simplify_ages(df):
     df.Age = categories
     return df
 
+#exract the letter from the front of the cabin data, and fill in an N for Na
+def simplify_cabins(df):
+    df.Cabin = df.Cabin.fillna('N')
+    df.Cabin = df.Cabin.apply(lambda x: x[0])
+    return df
