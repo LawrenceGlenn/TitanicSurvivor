@@ -90,3 +90,8 @@ def encode_features(df_train, df_test):
         df_train[feature] = le.transform(df_train[feature])
         df_test[feature] = le.transform(df_test[feature])
     return df_train, df_test
+
+
+#apply the label encoder
+data_train, data_test = encode_features(data_train, data_test)
+data_train.head()
