@@ -37,3 +37,12 @@ def simplify_cabins(df):
     df.Cabin = df.Cabin.fillna('N')
     df.Cabin = df.Cabin.apply(lambda x: x[0])
     return df
+
+#group the fares into quartiles
+def simplify_fares(df):
+    df.Fare = df.Fare.fillna(-0.5)
+    bins = (-1, 0, 8, 15, 31, 1000)
+    group_names = ['Unknown', '1_quartile', '2_quartile', '3_quartile', '4_quartile']
+    categories = pd.cut(df.Fare, bins, labels=group_names)
+    df.Fare = categories
+    return df
