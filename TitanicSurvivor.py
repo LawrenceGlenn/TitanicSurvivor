@@ -46,3 +46,9 @@ def simplify_fares(df):
     categories = pd.cut(df.Fare, bins, labels=group_names)
     df.Fare = categories
     return df
+
+#split the last name into name and prefix as seperate columns
+def format_name(df):
+    df['Lname'] = df.Name.apply(lambda x: x.split(' ')[0])
+    df['NamePrefix'] = df.Name.apply(lambda x: x.split(' ')[1])
+    return df    
