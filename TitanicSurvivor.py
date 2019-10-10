@@ -52,3 +52,8 @@ def format_name(df):
     df['Lname'] = df.Name.apply(lambda x: x.split(' ')[0])
     df['NamePrefix'] = df.Name.apply(lambda x: x.split(' ')[1])
     return df    
+    
+#remove unwanted features
+def drop_features(df):
+    return df.drop(['Ticket', 'Name', 'Embarked'], axis=1)
+
