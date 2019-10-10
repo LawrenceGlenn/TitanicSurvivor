@@ -70,4 +70,9 @@ data_train = transform_features(data_train)
 data_test = transform_features(data_test)
 data_train.head()
 
- 
+#plot values of some of the transformed data
+sns.barplot(x="Age", y="Survived", hue="Sex", data=data_train);
+
+sns.barplot(x="Cabin", y="Survived", hue="Sex", data=data_train);
+
+sns.barplot(x="Fare", y="Survived", hue="Sex", data=data_train);
