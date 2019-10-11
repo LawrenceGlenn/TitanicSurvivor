@@ -113,3 +113,12 @@ X_train, X_test, y_train, y_test = train_test_split(X_all, y_all, test_size=num_
 
 # select random forest as the classifier
 clf = RandomForestClassifier()
+
+# Choose some parameter combinations to try
+parameters = {'n_estimators': [4, 6, 9], 
+              'max_features': ['log2', 'sqrt','auto'], 
+              'criterion': ['entropy', 'gini'],
+              'max_depth': [2, 3, 5, 10], 
+              'min_samples_split': [2, 3, 5],
+              'min_samples_leaf': [1,5,8]
+             }
