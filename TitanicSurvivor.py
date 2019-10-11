@@ -164,3 +164,9 @@ run_kfold(model)
 #predict with the actual test data
 ids = data_test['PassengerId']
 predictions = clf.predict(data_test.drop('PassengerId', axis=1))
+
+
+#look at final result
+output = pd.DataFrame({ 'PassengerId' : ids, 'Survived': predictions })
+# output.to_csv('titanic-predictions.csv', index = False)
+output.head()
