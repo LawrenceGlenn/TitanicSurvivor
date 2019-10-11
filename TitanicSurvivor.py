@@ -4,6 +4,10 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 %matplotlib inline
 from sklearn import preprocessing
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import make_scorer, accuracy_score
+from sklearn.model_selection import GridSearchCV
+from sklearn.model_selection import train_test_split
 
 
 
@@ -95,3 +99,4 @@ def encode_features(df_train, df_test):
 #apply the label encoder
 data_train, data_test = encode_features(data_train, data_test)
 data_train.head()
+
