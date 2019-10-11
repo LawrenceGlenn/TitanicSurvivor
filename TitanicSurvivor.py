@@ -129,3 +129,6 @@ acc_scorer = make_scorer(accuracy_score)
 # Run the grid search
 grid_obj = GridSearchCV(clf, parameters, scoring=acc_scorer)
 grid_obj = grid_obj.fit(X_train, y_train)
+
+# Set the clf to the best combination of parameters
+clf = grid_obj.best_estimator_
