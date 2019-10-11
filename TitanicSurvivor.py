@@ -140,3 +140,23 @@ clf.fit(X_train, y_train)
 predictions = clf.predict(X_test)
 print(accuracy_score(y_test, predictions))
 
+
+#function to verify efficacy with KFold, selecting 10 buckets and using a different buck to test a new iteration each time
+def run_kfold(clf):
+	kf = KFold(n_splits=10)
+	outcomes = []
+	fold = 0
+	for train_index, text_index in kf.split(features):
+		fold +=1
+		X_train, X_test = X_all.values[train_index], X_all.values[test_index]
+		y_train, y_test = y_all.values[train_index], y_all.values[test_index]
+		clf.fit(X_train, y_train)
+		predictions = clf.predict(X_test)
+		accuracy = accuracy_score(y_test, predictions)
+		outcomes.append(accuracy)
+		print("Fold {0} accuracy: {1}".format(fold,accuracy))
+	mean_outcome = np.mean(outcomes)
+	print("Mean Accuracy: {0}".format(mean_outcome))
+
+
+run_kfold(model)
