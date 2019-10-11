@@ -126,3 +126,6 @@ parameters = {'n_estimators': [4, 6, 9],
 # Type of scoring used to compare parameter combinations
 acc_scorer = make_scorer(accuracy_score)
 
+# Run the grid search
+grid_obj = GridSearchCV(clf, parameters, scoring=acc_scorer)
+grid_obj = grid_obj.fit(X_train, y_train)
