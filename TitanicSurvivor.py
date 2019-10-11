@@ -100,3 +100,7 @@ def encode_features(df_train, df_test):
 data_train, data_test = encode_features(data_train, data_test)
 data_train.head()
 
+
+#split the training data into the survived value and everything else
+X_all = data_train.drop(['Survived', 'PassengerId'], axis=1)
+y_all = data_train['Survived']
