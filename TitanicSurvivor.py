@@ -135,3 +135,8 @@ clf = grid_obj.best_estimator_
 
 # Fit the best algorithm to the data. 
 clf.fit(X_train, y_train)
+
+
+predictions = clf.predict(X_test)
+print(accuracy_score(y_test, predictions))
+
