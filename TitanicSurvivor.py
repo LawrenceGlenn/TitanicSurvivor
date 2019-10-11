@@ -132,3 +132,6 @@ grid_obj = grid_obj.fit(X_train, y_train)
 
 # Set the clf to the best combination of parameters
 clf = grid_obj.best_estimator_
+
+# Fit the best algorithm to the data. 
+clf.fit(X_train, y_train)
