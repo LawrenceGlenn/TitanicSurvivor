@@ -104,3 +104,9 @@ data_train.head()
 #split the training data into the survived value and everything else
 X_all = data_train.drop(['Survived', 'PassengerId'], axis=1)
 y_all = data_train['Survived']
+
+
+#using scikit to shuffle the data using 80% to train and 20% to test
+num_test = 0.20
+X_train, X_test, y_train, y_test = train_test_split(X_all, y_all, test_size=num_test, random_state=23)
+
