@@ -122,3 +122,7 @@ parameters = {'n_estimators': [4, 6, 9],
               'min_samples_split': [2, 3, 5],
               'min_samples_leaf': [1,5,8]
              }
+
+# Type of scoring used to compare parameter combinations
+acc_scorer = make_scorer(accuracy_score)
+
