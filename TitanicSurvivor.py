@@ -1,8 +1,9 @@
+
+%matplotlib tk
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-%matplotlib inline
 from sklearn import preprocessing
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import make_scorer, accuracy_score
@@ -12,9 +13,9 @@ from sklearn.model_selection import KFold
 
 
 #create training data from csv from kaggle using pandas
-data_train = pd.read_csv('../input/train.csv')
+data_train = pd.read_csv('Downloads/titanic/train.csv')
 #create testing dataset from kaggle csv using pandas
-data_test = pd.read_csv('../input/test.csv')
+data_test = pd.read_csv('Downloads/titanic/test.csv')
 
 
 #display a few pieces of data
